@@ -1,0 +1,25 @@
+RestFul Totvs:
+http://tdn.totvs.com/display/PROT/FWRestModel+-+API+RESTful+dos+modelos+de+dados+do+Protheus
+
+Treinamento Rest Koji:
+https://fluig.totvs.com/portal/p/10097/ecmnavigation?app_ecm_navigation_doc=6170326&app_ecm_navigation_docVersion=1000 
+
+Grupo API Ryver:
+https://totvs.ryver.com/index.html#forums/1230269/chat
+
+Guia de Implementação de API Totvs:
+http://tdn.totvs.com/display/public/INT/Guia+de+implementacao+das+APIs+TOTVS
+
+Guia para aprovação de APIs:
+http://tdn.totvs.com/display/framework/7.+Aprovando+API+de+mensagem+padronizada
+
+API Star Wars:
+https://swapi.co/
+
+Swagger Engenharia:
+http://swagger.engpro.totvs.com.br
+
+Cursos de GIT:
+https://www.udemy.com/git-e-github-para-iniciantes/ (Grátis)
+https://www.alura.com.br/curso-online-git (Verificar questões de acesso ao Alura com o RH)
+https://www.youtube.com/watch?v=tXF_ACGADKs (Treinamento do Francisco Cardoso - TTalk )
