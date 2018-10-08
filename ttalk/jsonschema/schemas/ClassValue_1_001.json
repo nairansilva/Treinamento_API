@@ -42,7 +42,7 @@
           "items":{
               "type":"array",
               "items":{
-                  "$ref":"#/definitions/ClassValueInfo"
+                  "$ref":"#/definitions/BusinessContentType"
               }
           }
       }
