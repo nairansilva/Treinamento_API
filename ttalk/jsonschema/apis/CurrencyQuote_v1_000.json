@@ -1,386 +1,357 @@
 {
-    "openapi": "3.0.1",
-    "servers": [
-        {
-            "description": "API para cadastro alíquotas de moeda TOTVS",                
-            "url": "http://{serverUrl}:{serverHttpPort}/api/geral/v1",
-            "variables": {			
-                "serverUrl": {
-                    "default":"localhost"
-                },
-                "serverHttpPort": {
-                    "default":"8080"
-                }
-            }
-        }
-    ],
-    "info": {
-        "description": "API para cadastro alíquotas de moeda para produtos TOTVS",
-        "version": "2.000",
-        "title": "CurrencyQuote",
-        "contact": {
-            "name": "T-Talk",
-            "url": "https://api.totvs.com.br",
-            "email": "comiteintegracao@totvs.com.br"
-        },
-        "x-totvs": {
-            "messageDocumentation":{
-                "name": "CurrencyQuote",
-                "description": "Cadastro de alíquotas de moeda",
-                "segment": "Geral"
-            },
-            "productInformation":[
-                {
-                    "product":"protheus",
-                    "contact":"squad.crm@totvs.com.br",
-                    "description":"Cadastro de alíquotas de moeda",
-                    "adapter":"MATS090.prw"
-                }
-            ]
-        }
-    },
-    "paths": {
-        "/currencyQuote": {
-            "get": {
-                "tags":[
-                    "CurrencyQuote"
-                ],
-                "summary":"Retorna lista de cotações",
-                "x-totvs":{
-                    "productInformation":[
-                        {
-                            "product":"protheus",
-                            "avaliable":true,
-                            "note":"Este verbo está disponível com os parâmetros Authorization, Order, Page, PageSize e Fields",
-                            "minimalVersion":"12.1.21"
-                        }
-                    ]
-                },
-                "description":"Retorna lista de cotações",
-                "operationId":"getCurrencyQuote",
-                "parameters": [
-                    {                        
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
-                    },
-                    {
+	"openapi": "3.0.1",
+	"servers": [{
+			"description": "API para cadastro alíquotas de moeda TOTVS",
+			"url": "http://{serverUrl}:{serverHttpPort}/api/geral/v1",
+			"variables": {
+				"serverUrl": {
+					"default": "localhost"
+				},
+				"serverHttpPort": {
+					"default": "8080"
+				}
+			}
+		}
+	],
+	"info": {
+		"description": "API para cadastro alíquotas de moeda para produtos TOTVS",
+		"version": "2.000",
+		"title": "CurrencyQuote",
+		"contact": {
+			"name": "T-Talk",
+			"url": "https://api.totvs.com.br",
+			"email": "comiteintegracao@totvs.com.br"
+		},
+		"x-totvs": {
+			"messageDocumentation": {
+				"name": "CurrencyQuote",
+				"description": "Cadastro de alíquotas de moeda",
+				"segment": "Geral"
+			},
+			"productInformation": [{
+					"product": "protheus",
+					"contact": "squad.crm@totvs.com.br",
+					"description": "Cadastro de alíquotas de moeda",
+					"adapter": "MATS090.prw"
+				}
+			]
+		}
+	},
+	"paths": {
+		"/currencyQuote": {
+			"get": {
+				"tags": [
+					"CurrencyQuote"
+				],
+				"summary": "Retorna lista de cotações",
+				"x-totvs": {
+					"productInformation": [{
+							"product": "protheus",
+							"avaliable": true,
+							"note": "Este verbo está disponível com os parâmetros Authorization, Order, Page, PageSize e Fields",
+							"minimalVersion": "12.1.21"
+						}
+					]
+				},
+				"description": "Retorna lista de cotações",
+				"operationId": "getCurrencyQuote",
+				"parameters": [{
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
+					}, {
 						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Order"
-                    },
-                    {
+					}, {
 						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Page"
-                    },
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/PageSize"
-                    },          
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description":"Operação realizada com sucesso!",
-                        "content":{
-                            "application/json":{
-                                "schema":{                                    
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedCurrencyQuote"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Erro no momento da requisição",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Registro não encontrado",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }
-                    }
-                }
-            }, 
-            "post": {
-                "tags": [
-                    "Notes"
-                ],
-                "summary": "Inclui um cotações",
-                "description": "Inclui uma cotações conforme dados enviados na requisição.",
-                "operationId": "postCurrencyQuote",
-                "x-totvs": {
-					"productInformation":[
-						{
-							"product":"protheus",
-                            "avaliable":true,
-                            "note": "Este verbo esta disponivel com os parametros Authorization e Fields",
-                            "minimalVersion":"12.1.21"
+					}, {
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/PageSize"
+					}, {
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Operação realizada com sucesso!",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/CurrencyQuote_1_001.json#/definitions/PagedCurrencyQuote"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Erro no momento da requisição",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Registro não encontrado",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"CurrencyQuote"
+				],
+				"summary": "Inclui um cotações",
+				"description": "Inclui uma cotações conforme dados enviados na requisição.",
+				"operationId": "postCurrencyQuote",
+				"x-totvs": {
+					"productInformation": [{
+							"product": "protheus",
+							"avaliable": true,
+							"note": "Este verbo esta disponivel com os parametros Authorization e Fields",
+							"minimalVersion": "12.1.21"
 						}
 					]
-                },
-                "parameters": [
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
-                    },
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {                                
-                                "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/CurrencyQuoteInfo"
-                            }
-                        }
-                    },
-                    "description": "Cotação a ser incluida"
-                },
-                "responses" : {
-                    "201": {
-                        "description": "Operação realizada com sucesso",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedCurrencyQuote"
-                                }   
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Erro no momento da inclusão",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/currencyQuote/{Date}": {
-            "get": {
-                "tags":[
-                    "Date"
-                ],
-                "summary":"Retorna a cotações de uma data específica de acordo com a chave de pesquisa",
-                "description": "Retorna a cotações de uma data específica de acordo com a chave de pesquisa",
-                "operationId":"getDate",
-                "x-totvs":{
-                    "productInformation": [                        
-                        {
-                            "product":"protheus",
-                            "avaliable":true,
-                            "note":"A data é no formato AAAAMMDD.",
-                            "minimalVersion":"12.1.21"
-                        }
-                    ]
-                },
-                "parameters": [
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
-                    },
-                    {
+				},
+				"parameters": [{
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
+					}, {
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/CurrencyQuote_1_001.json#/definitions/CurrencyQuoteInfo"
+							}
+						}
+					},
+					"description": "Cotação a ser incluida"
+				},
+				"responses": {
+					"201": {
+						"description": "Operação realizada com sucesso",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/CurrencyQuote_1_001.json#/definitions/PagedCurrencyQuote"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Erro no momento da inclusão",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/currencyQuote/{Date}": {
+			"get": {
+				"tags": [
+					"Date"
+				],
+				"summary": "Retorna a cotações de uma data específica de acordo com a chave de pesquisa",
+				"description": "Retorna a cotações de uma data específica de acordo com a chave de pesquisa",
+				"operationId": "getDate",
+				"x-totvs": {
+					"productInformation": [{
+							"product": "protheus",
+							"avaliable": true,
+							"note": "A data é no formato AAAAMMDD.",
+							"minimalVersion": "12.1.21"
+						}
+					]
+				},
+				"parameters": [{
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
+					}, {
 						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Order"
-                    },
-                    {
-						"$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Page"
-                    },
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/PageSize"
-                    },  
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"						
-                    },
-                    {
-                        "$ref": "#/components/parameters/Date"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Operação realizada com sucesso",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/CurrencyQuoteInfo"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Registro não encontrado",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put":{
-                "tags":[
-                    "Date"
-                ],
-                "summary":"Altera uma Anotação",
-                "description":"Atualiza a anotação conforme dados enviados na requisição",
-                "operationId":"putCode",
-                "x-totvs": {
-                    "productInformation": [
-                        {
-                            "product":"protheus",
-                            "avaliable":true,
-                            "note":"A data é no formato AAAAMMDD.",
-                            "minimalVersion":"12.1.21"
-                        }
-                    ]
-                },
-                "parameters": [
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
-                    },                    
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
-                    },
-                    {
-                        "$ref": "#/components/parameters/Code"
-                    }  
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/NotesInfo"
-                            }
-                        }
-                    },
-                    "description": "Anotação a ser alterada"
-                },
-                "responses": {
-                    "200": {
-                        "description": "Operação realizada com sucesso",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/NotesInfo"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "erro no momento da alteração",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }                        
-                      },
-                    "404": {
-                        "description": "Anotação não localizada",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete":{
-                "tags":[
-                    "Code"
-                ],
-                "summary":"Exclui uma Anotação",
-                "description":"Exclui uma anotação conforme dados enviados na requisição.",
-                "operationId":"deleteCode",
-                "x-totvs": {
-                    "productInformation": [
-                        {
-                            "product":"protheus",
-                            "avaliable":true,
-                            "note": "Este verbo esta disponivel com os parametros Authorization e Fields",
-                            "minimalVersion":"12.1.21"
-                        }
-                    ]
-                },
-                "parameters": [
-                    {
-                        "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
-                    },
-                    {
-                        "$ref": "#/components/parameters/Code"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Operação realizada com sucesso",
-                        "content": {
-                            "application/json": {
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "erro no momento da exclusão",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }                        
-                      },
-                    "404": {
-                        "description": "Anotação não localizada",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "parameters": {
-            "Date":{
-                "name": "Date",
-                "in": "path",
-                "description":"Data da cotação",
-                "required": true,
-                "example": "20180501",
-                "schema":{
-                    "type": "string"
-                },
-                "x-totvs": {
-					"productInformation":[
-						{
-							"product":"protheus",
-                            "avaliable":true,
-                            "note": "Informar o campo data no formato AAAAMMDD.",
-                            "minimalVersion":"12.1.21"
+					}, {
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Page"
+					}, {
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/PageSize"
+					}, {
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
+					}, {
+						"$ref": "#/components/parameters/Date"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Operação realizada com sucesso",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/CurrencyQuote_1_001.json#/definitions/CurrencyQuoteInfo"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Registro não encontrado",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"Date"
+				],
+				"summary": "Altera uma Anotação",
+				"description": "Atualiza a anotação conforme dados enviados na requisição",
+				"operationId": "putDate",
+				"x-totvs": {
+					"productInformation": [{
+							"product": "protheus",
+							"avaliable": true,
+							"note": "A data é no formato AAAAMMDD.",
+							"minimalVersion": "12.1.21"
 						}
 					]
-                }
-            }
-        },
-        "schemas": {
-
-        }
-    }
+				},
+				"parameters": [{
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
+					}, {
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
+					}, {
+						"$ref": "#/components/parameters/Date"
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/CurrencyQuote_1_001.json#/definitions/CurrencyQuoteInfo"
+							}
+						}
+					},
+					"description": "Anotação a ser alterada"
+				},
+				"responses": {
+					"200": {
+						"description": "Operação realizada com sucesso",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/CurrencyQuote_1_001.json#/definitions/CurrencyQuoteInfo"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "erro no momento da alteração",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Anotação não localizada",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Date"
+				],
+				"summary": "Exclui uma Anotação",
+				"description": "Exclui uma anotação conforme dados enviados na requisição.",
+				"operationId": "deleteDate",
+				"x-totvs": {
+					"productInformation": [{
+							"product": "protheus",
+							"avaliable": true,
+							"note": "Este verbo esta disponivel com os parametros Authorization e Fields",
+							"minimalVersion": "12.1.21"
+						}
+					]
+				},
+				"parameters": [{
+						"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
+					}, {
+						"$ref": "#/components/parameters/Date"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Operação realizada com sucesso",
+						"content": {
+							"application/json": {}
+						}
+					},
+					"400": {
+						"description": "erro no momento da exclusão",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Anotação não localizada",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"parameters": {
+			"Date": {
+				"name": "Date",
+				"in": "path",
+				"description": "Data da cotação",
+				"required": true,
+				"example": "20180501",
+				"schema": {
+					"type": "string"
+				},
+				"x-totvs": {
+					"productInformation": [{
+							"product": "protheus",
+							"avaliable": true,
+							"note": "Informar o campo data no formato AAAAMMDD.",
+							"minimalVersion": "12.1.21"
+						}
+					]
+				}
+			}
+		},
+		"schemas": {}
+	}
 }
