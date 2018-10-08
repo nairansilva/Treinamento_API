@@ -43,7 +43,7 @@
           "type":"object",
           "allOf":[
               {
-                  "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
+                  "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/PagedBuyers"
               },
               {
                   "$ref":"#/definitions/Buyers"
