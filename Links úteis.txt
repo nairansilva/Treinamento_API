@@ -23,3 +23,10 @@ Cursos de GIT:
 https://www.udemy.com/git-e-github-para-iniciantes/ (Grátis)
 https://www.alura.com.br/curso-online-git (Verificar questões de acesso ao Alura com o RH)
 https://www.youtube.com/watch?v=tXF_ACGADKs (Treinamento do Francisco Cardoso - TTalk )
+
+Extensão Chrome:
+https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+
+Download PostMan:
+https://www.getpostman.com/
+
