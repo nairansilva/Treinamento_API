@@ -81,7 +81,7 @@
                         "content":{
                             "application/json":{
                                 "schema":{                                     
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/aline/notes/v1/2_000/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedNOtes"
+                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/aline/notes/v1/2_000/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedNotes"
                                                                      
                                 }
                             }
