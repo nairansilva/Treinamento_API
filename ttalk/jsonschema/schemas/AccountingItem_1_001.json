@@ -39,6 +39,28 @@
     }
   },
   "definitions": {
+	"PagedAccountingItens":{
+		"type":"object",
+            "allOf":[
+                {
+                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
+                },
+                {
+                    "$ref":"#/definitions/AccountingItens"
+                }
+            ]
+	}
+	"AccountingItem":{
+		"type":"object",
+            "properties":{
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/AccountingItens"
+                    }
+                }
+            }
+	}
     "BusinessContentType": {
       "type": "object",
       "properties": {
