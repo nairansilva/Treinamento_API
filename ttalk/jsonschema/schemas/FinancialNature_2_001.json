@@ -53,9 +53,9 @@
     "FinancialNature":{
       "type":"object",
       "properties":{
-        "itens":{
+        "items":{
           "type":"array",
-          "itens":{
+          "items":{
             "$ref":"#/definitions/BusinessContentType"
           }
         }
