@@ -149,7 +149,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedNotes"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/financialnature/v1/2_001/ttalk/jsonschema/schemas/FinancialNature_2_001.json#/definitions/BusinessContentType"
                                 }   
                             }
                         }
