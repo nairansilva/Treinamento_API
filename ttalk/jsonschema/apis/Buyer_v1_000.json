@@ -110,7 +110,7 @@
             }, 
             "post": {
                 "tags": [
-                    "Buyers"
+                    "buyers"
                 ],
                 "summary": "Inclui Cadastro de Comprador",
                 "description": "Inclui Cadastro de Comprador.",
