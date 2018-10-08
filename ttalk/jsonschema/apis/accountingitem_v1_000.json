@@ -77,7 +77,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description":"operação realizada com sucesso!",
+                        "description":"operação realizada!",
                         "content":{
                             "application/json":{
                                 "schema":{                                    

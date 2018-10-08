@@ -49,7 +49,7 @@
                     "$ref":"#/definitions/AccountingItens"
                 }
             ]
-	}
+	},
 	"AccountingItem":{
 		"type":"object",
             "properties":{
@@ -60,7 +60,7 @@
                     }
                 }
             }
-	}
+	},
     "BusinessContentType": {
       "type": "object",
       "properties": {
