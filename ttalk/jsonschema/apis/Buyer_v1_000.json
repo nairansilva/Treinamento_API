@@ -81,7 +81,7 @@
                         "content":{
                             "application/json":{
                                 "schema":{                                    
-                                             
+                                 "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/buyerjr/v1/2_000/ttalk/jsonschema/schemas/Buyer_2_000.json#/definitions/PagedBuyers"            
                                 }
                             }
                         }
@@ -149,7 +149,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedNotes"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/buyerjr/v1/2_000/ttalk/jsonschema/schemas/Buyer_2_000.json#/definitions/PagedBuyers"
                                 }   
                             }
                         }
