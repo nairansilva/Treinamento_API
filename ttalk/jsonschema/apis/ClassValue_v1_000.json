@@ -137,7 +137,7 @@
                     "content": {
                         "application/json": {
                             "schema": {                                
-                                
+                                "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/roberto/ClassValue/v1/2_000/ttalk/jsonschema/schemas/ClassValue_1_001.json#/definitions/BusinessContentType"
                             }
                         }
                     },
@@ -211,7 +211,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/NotesInfo"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/roberto/ClassValue/v1/2_000/ttalk/jsonschema/schemas/ClassValue_1_001.json#/definitions/BusinessContentType"
                                 }
                             }
                         }
@@ -272,7 +272,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/NotesInfo"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/roberto/ClassValue/v1/2_000/ttalk/jsonschema/schemas/ClassValue_1_001.json#/definitions/BusinessContentType"
                                 }
                             }
                         }

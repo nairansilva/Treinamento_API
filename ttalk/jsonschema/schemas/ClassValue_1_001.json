@@ -36,7 +36,7 @@
           }
       ]
   },
-  "ClassValue":{
+    "ClassValue":{
       "type":"object",
       "properties":{
           "items":{
