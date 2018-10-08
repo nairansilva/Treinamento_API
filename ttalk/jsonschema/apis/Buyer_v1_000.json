@@ -81,7 +81,7 @@
                         "content":{
                             "application/json":{
                                 "schema":{                                    
-
+                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/buyercapeli/v1/2_000/ttalk/jsonschema/schemas/Buyer_2_000.json"
                                 }
                             }
                         }
