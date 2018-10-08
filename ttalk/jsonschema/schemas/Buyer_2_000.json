@@ -50,7 +50,7 @@
               }
           ]
       },
-      "Buyer":{
+      "Buyers":{
           "type":"object",
           "properties":{
               "items":{
