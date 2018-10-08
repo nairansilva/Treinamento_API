@@ -2,8 +2,8 @@
     "openapi": "3.0.1",
     "servers": [
         {
-            "description": "API para cadastro Notas dos produtos TOTVS",                
-            "url": "http://{serverUrl}:{serverHttpPort}/api/crm/v1",
+            "description": "API para cadastro de Centro de Custo produtos TOTVS",                
+            "url": "http://{serverUrl}:{serverHttpPort}/api/control/v1",
             "variables": {			
                 "serverUrl": {
                     "default":"localhost"
@@ -15,9 +15,9 @@
         }
     ],
     "info": {
-        "description": "API para a entidade Notas (Notes) para produtos TOTVS",
+        "description": "API para a entidade Notas (Notes) para produtos TOTVS.",
         "version": "2.000",
-        "title": "Notes",
+        "title": "CostCenter",
         "contact": {
             "name": "T-Talk",
             "url": "https://api.totvs.com.br",
@@ -25,27 +25,27 @@
         },
         "x-totvs": {
             "messageDocumentation":{
-                "name": "Notes",
-                "description": "Cadastro de Anotações",
+                "name": "CostCenter",
+                "description": "Cadastro de Centro de Custo",
                 "segment": "Services"
             },
             "productInformation":[
                 {
                     "product":"protheus",
-                    "contact":"squad.crm@totvs.com.br",
-                    "description":"Cadastro de Anotações",
-                    "adapter":"CRMA100.prw"
+                    "contact":"squad.control@totvs.com.br",
+                    "description":"Cadastro de Centro de Custo ",
+                    "adapter":"CTBS030.prw"
                 }
             ]
         }
     },
     "paths": {
-        "/notes": {
+        "/costcenters": {
             "get": {
                 "tags":[
-                    "Notes"
+                    "CostCenters"
                 ],
-                "summary":"Retorna lista de Anotações",
+                "summary":"Retorna lista de Centro de Custo",
                 "x-totvs":{
                     "productInformation":[
                         {
@@ -56,8 +56,8 @@
                         }
                     ]
                 },
-                "description":"Retorna lista completa das Anotações",
-                "operationId":"getNotes",
+                "description":"Retorna lista completa dos Centro de Custos",
+                "operationId":"getCostCenters",
                 "parameters": [
                     {                        
                         "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
@@ -95,16 +95,26 @@
                                 }
                             }
                         }
+                    },
+                    "404": {
+                        "description": "erro no momento da requisição",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+                                }
+                            }
+                        }
                     }
                 }
             }, 
             "post": {
                 "tags": [
-                    "Notes"
+                    "CostCenters"
                 ],
                 "summary": "Inclui uma anotação",
                 "description": "Inclui uma anotação conforme dados enviados na requisição.",
-                "operationId": "postNotes",
+                "operationId": "postCostCenters",
                 "x-totvs": {
 					"productInformation":[
 						{
@@ -134,7 +144,7 @@
                     "description": "Anotação a ser incluida"
                 },
                 "responses" : {
-                    "200": {
+                    "201": {
                         "description": "Operação realizada com sucesso",
                         "content": {
                             "application/json": {
@@ -157,20 +167,20 @@
                 }
             }
         },
-        "/notes/{Code}": {
+        "/costcenters/{Code}": {
             "get": {
                 "tags":[
                     "Code"
                 ],
-                "summary":"Retorna uma anotação específica de acordo com a chave de pesquisa",
-                "description": "Retorna a anotação de acordo com o ID de pesquisa",
+                "summary":"Retorna um centtro de custo específica de acordo com a chave de pesquisa",
+                "description": "Retorna um centtro de custo de acordo com o ID de pesquisa",
                 "operationId":"getCode",
                 "x-totvs":{
                     "productInformation": [                        
                         {
                             "product":"protheus",
                             "avaliable":true,
-                            "note":"o Code é composto por filial + Código da Anotação",
+                            "note":"o Code é composto por filial + Código do Centro de Custo",
                             "minimalVersion":"12.1.21"
                         }
                     ]
@@ -206,6 +216,16 @@
                             }
                         }
                     },
+                    "400": {
+                        "description": "Anotação não localizada na base",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
+                                }
+                            }
+                        }
+                    },
                     "404": {
                         "description": "Anotação não localizada na base",
                         "content": {
@@ -222,8 +242,8 @@
                 "tags":[
                     "Code"
                 ],
-                "summary":"Altera uma Anotação",
-                "description":"Atualiza a anotação conforme dados enviados na requisição",
+                "summary":"Altera um Centro de Custo",
+                "description":"Atualiza centro de custo conforme dados enviados na requisição",
                 "operationId":"putCode",
                 "x-totvs": {
                     "productInformation": [
@@ -293,8 +313,8 @@
                 "tags":[
                     "Code"
                 ],
-                "summary":"Exclui uma Anotação",
-                "description":"Exclui uma anotação conforme dados enviados na requisição.",
+                "summary":"Exclui um Centro de Custo",
+                "description":"Exclui um Centro de Custo conforme dados enviados na requisição.",
                 "operationId":"deleteCode",
                 "x-totvs": {
                     "productInformation": [
@@ -351,7 +371,7 @@
             "Code":{
                 "name": "Code",
                 "in": "path",
-                "description":"Identificador único da anotação",
+                "description":"Identificador único dao centro de custo",
                 "required": true,
                 "example": "D MG 01 001000",
                 "schema":{
@@ -362,7 +382,7 @@
 						{
 							"product":"protheus",
                             "avaliable":true,
-                            "note": "Informar os campos Filial (AOB.AOB_FILIAL) e Código da condição de pagamento (AOB.AOB_IDNOTA)",
+                            "note": "Informar os campos Filial (CTT.CTT_FILIAL) e Código do centro de custo(CTT.CTT_CUSTO)",
                             "minimalVersion":"12.1.21"
 						}
 					]
