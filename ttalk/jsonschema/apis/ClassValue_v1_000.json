@@ -81,7 +81,7 @@
                         "content":{
                             "application/json":{
                                 "schema":{                                    
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/roberto/ClassValue/v1/2_000/ttalk/jsonschema/schemas/ClassValue_1_001.json#/definitions/PagedNotes"
+                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/roberto/ClassValue/v1/2_000/ttalk/jsonschema/schemas/ClassValue_1_001.json#/definitions/PagedClassValue"
                                 }
                             }
                         }
