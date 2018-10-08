@@ -81,7 +81,7 @@
                         "content":{
                             "application/json":{
                                 "schema":{                                    
-                                    
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/FinancialNature_2_001.json#definitions/PagedFinancialNature"
                                 }
                             }
                         }
