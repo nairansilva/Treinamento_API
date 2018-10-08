@@ -39,7 +39,7 @@
     }
   },
   "definitions": {
-      "PagedBuyers":{
+      "Paged":{
           "type":"object",
           "allOf":[
               {
