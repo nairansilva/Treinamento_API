@@ -372,7 +372,7 @@
 						{
 							"product":"protheus",
                             "avaliable":true,
-                            "note": "Informar os campos Filial (CTD.CTD_FILIAL) e Código da condição de pagamento (CTD.CTD_ITEM)",
+                            "note": "Informar os campos Filial (CTD.CTD_FILIAL) Código da condição de pagamento (CTD.CTD_ITEM)",
                             "minimalVersion":"12.1.21"
 						}
 					]
