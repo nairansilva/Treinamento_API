@@ -39,8 +39,8 @@
 			]
 		},
         "CurrencyQuote":{
+			"type":"array",
 			"items":{
-				"type":"array",
 				"properties": {
 					"type":"object",
 					"$ref":"#/definitions/CurrencyQuoteInfo"
