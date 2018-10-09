@@ -30,7 +30,8 @@
 	"definitions": {
 		"PagedCurrencyQuote": {
 			"type": "object",
-			"allOf": { {
+			"allOf": { 
+				{
 					"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
 				}, {
 					"$ref": "#/definitions/CurrencyQuote"
@@ -38,14 +39,12 @@
 			}
 		},
         "CurrencyQuote":{
-            "type":"object",
-            "properties":{
-                "items":{
-                    "type":"array",
-                    "items":{
-                        "$ref":"#/definitions/CurrencyQuoteInfo"
-                    }
-                }
+			"items":{
+				"type":"array",
+				"properties": {
+					"type":"object",
+					"$ref":"#/definitions/CurrencyQuoteInfo"
+				}
             }
         },
         "CurrencyQuoteInfo":{
@@ -92,8 +91,7 @@
 				"CompanyInternalId",
 				"Date"
 			]
-		}
-		
+		},
 		"CurrencyType": {
 			"type": "object",
 			"properties": {

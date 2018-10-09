@@ -34,139 +34,135 @@
 				{
 					"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
 				}, {
-					"type": "object",
-					"properties": {
-						"items": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/CurrencyQuoteInfo"
-							}
+					"items": {
+						"type": "array",
+						"properties": {
+							"$ref": "#/definitions/CurrencyQuoteInfo"
 						}
 					}
 				}
 			}
-		}
-	},
-	"CurrencyQuoteInfo": {
-		"type": "object",
-		"properties": {
-			"CompanyId": {
-				"type": "string",
-				"example": "T1"
-			},
-			"BranchId": {
-				"type": "string",
-				"example": "D MG 01 "
-			},
-			"CompanyInternalId": {
-				"type": "string",
-				"example": "T1D MG 01 "
-			},
-			"Date": {
-				"description": "Data da cotação",
-				"type": "string",
-				"format": "date",
-				"x-totvs": [{
-						"product": "PROTHEUS",
-						"field": "M2_DATA",
-						"required": true,
-						"type": "Date",
-						"length": "10",
-						"note": "Data no formato AAAAMMDD.",
-						"available": true,
-						"canUpdate": false
+		},
+		"CurrencyQuoteInfo": {
+			"type": "object",
+			"properties": {
+				"CompanyId": {
+					"type": "string",
+					"example": "T1"
+				},
+				"BranchId": {
+					"type": "string",
+					"example": "D MG 01 "
+				},
+				"CompanyInternalId": {
+					"type": "string",
+					"example": "T1D MG 01 "
+				},
+				"Date": {
+					"description": "Data da cotação",
+					"type": "string",
+					"format": "date",
+					"x-totvs": [{
+							"product": "PROTHEUS",
+							"field": "M2_DATA",
+							"required": true,
+							"type": "Date",
+							"length": "10",
+							"note": "Data no formato AAAAMMDD.",
+							"available": true,
+							"canUpdate": false
+						}
+					]
+				},
+				"ListOfCurrency": {
+					"description": "Cotações das moedas",
+					"type": "array",
+					"maxItems": 99,
+					"items": {
+						"$ref": "#/definitions/CurrencyType",
+						"type": "object"
 					}
-				]
-			},
-			"ListOfCurrency": {
-				"description": "Cotações das moedas",
-				"type": "array",
-				"maxItems": 99,
-				"items": {
-					"$ref": "#/definitions/CurrencyType",
-					"type": "object"
 				}
-			}
+			},
+			"required": [
+				"CompanyId",
+				"BranchId",
+				"CompanyInternalId",
+				"Date"
+			]
 		},
-		"required": [
-			"CompanyId",
-			"BranchId",
-			"CompanyInternalId",
-			"Date"
-		]
-	}
-
-	"CurrencyType": {
-		"type": "object",
-		"properties": {
-			"Code": {
-				"description": "Código da moeda (número de 1 a 99)",
-				"type": "integer",
-				"minimum": 1,
-				"maximum": 99,
-				"format": "int32",
-				"x-totvs": [{
-						"product": "PROTHEUS",
-						"field": "",
-						"required": true,
-						"type": "varchar",
-						"length": "2",
-						"note": "",
-						"available": true,
-						"canUpdate": false
-					}
-				]
+		"CurrencyType": {
+			"type": "object",
+			"properties": {
+				"Code": {
+					"description": "Código da moeda (número de 1 a 99)",
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 99,
+					"format": "int32",
+					"x-totvs": [{
+							"product": "PROTHEUS",
+							"field": "",
+							"required": true,
+							"type": "varchar",
+							"length": "2",
+							"note": "",
+							"available": true,
+							"canUpdate": false
+						}
+					]
+				},
+				"Name": {
+					"description": "Nome da moeda (Real, Dólar, Euro...)",
+					"type": "string",
+					"x-totvs": [{
+							"product": "PROTHEUS",
+							"field": "MV_MOEDA + código da moeda (ex: MV_MOEDA1, MV_MOEDA2... MV_MOEDA99)",
+							"required": false,
+							"type": "varchar",
+							"length": "250",
+							"note": "",
+							"available": true,
+							"canUpdate": false
+						}
+					]
+				},
+				"Symbol": {
+					"description": "Símbolo da moeda (R$, US$, €...)",
+					"type": "string",
+					"x-totvs": [{
+							"product": "PROTHEUS",
+							"field": "MV_SIMB + código da moeda (ex: MV_SIMB1, MV_SIMB2... MV_SIMB99)",
+							"required": false,
+							"type": "varchar",
+							"length": "250",
+							"note": "",
+							"available": true,
+							"canUpdate": false
+						}
+					]
+				},
+				"Quote": {
+					"description": "Cotação da moeda",
+					"type": "number",
+					"format": "double",
+					"x-totvs": [{
+							"product": "PROTHEUS",
+							"field": "M2_MOEDA + código da moeda (ex: M2_MOEDA1, M2_MOEDA2... M2_MOEDA99)",
+							"required": true,
+							"type": "Numérico",
+							"length": "11v4",
+							"note": "",
+							"available": true,
+							"canUpdate": false
+						}
+					]
+				}
 			},
-			"Name": {
-				"description": "Nome da moeda (Real, Dólar, Euro...)",
-				"type": "string",
-				"x-totvs": [{
-						"product": "PROTHEUS",
-						"field": "MV_MOEDA + código da moeda (ex: MV_MOEDA1, MV_MOEDA2... MV_MOEDA99)",
-						"required": false,
-						"type": "varchar",
-						"length": "250",
-						"note": "",
-						"available": true,
-						"canUpdate": false
-					}
-				]
-			},
-			"Symbol": {
-				"description": "Símbolo da moeda (R$, US$, €...)",
-				"type": "string",
-				"x-totvs": [{
-						"product": "PROTHEUS",
-						"field": "MV_SIMB + código da moeda (ex: MV_SIMB1, MV_SIMB2... MV_SIMB99)",
-						"required": false,
-						"type": "varchar",
-						"length": "250",
-						"note": "",
-						"available": true,
-						"canUpdate": false
-					}
-				]
-			},
-			"Quote": {
-				"description": "Cotação da moeda",
-				"type": "number",
-				"format": "double",
-				"x-totvs": [{
-						"product": "PROTHEUS",
-						"field": "M2_MOEDA + código da moeda (ex: M2_MOEDA1, M2_MOEDA2... M2_MOEDA99)",
-						"required": true,
-						"type": "Numérico",
-						"length": "11v4",
-						"note": "",
-						"available": true,
-						"canUpdate": false
-					}
-				]
-			}
-		},
-		"required": [
-			"Code",
-			"Quote"
-		]
+			"required": [
+				"Code",
+				"Quote"
+			]
+		}
 	}
 }
