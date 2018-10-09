@@ -30,13 +30,13 @@
 	"definitions": {
 		"PagedCurrencyQuote": {
 			"type": "object",
-			"allOf": { 
+			"allOf": [
 				{
 					"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
 				}, {
 					"$ref": "#/definitions/CurrencyQuote"
 				}
-			}
+			]
 		},
         "CurrencyQuote":{
 			"items":{
