@@ -8,14 +8,14 @@
     "x-totvs": {
       "messageDocumentation": {
         "name": "AccountingItem",
-        "description": "Cadastro de Item Contábil",
+        "description": "Cadastro de Item ContÃ¡bil",
         "segment": ""
       },
       "productInformation": [
         {
           "product": "PROTHEUS",
           "contact": "Rogerio Nagy",
-          "note": "Cadastro de Item Contábil",
+          "note": "Cadastro de Item ContÃ¡bil",
           "adapter": "CTBI040A"
         },
         {
@@ -85,7 +85,7 @@
               "required": true,
               "type": "int",
               "length": "02",
-              "note": "Código da Coligada",
+              "note": "CÃ³digo da Coligada",
               "available": true,
               "canUpdate": false
             }
@@ -101,7 +101,7 @@
               "required": false,
               "type": "char",
               "length": "12",
-              "note": "Será enviado o valor da variável cFilAnt",
+              "note": "SerÃ¡ enviado o valor da variável cFilAnt",
               "available": true,
               "canUpdate": false
             }
@@ -213,7 +213,7 @@
           ]
         },
         "Class": {
-          "description": "Classe (Analítico ou Sintético) / 1 - Sintético / 2 - Analítico",
+          "description": "Classe (Analí­tico ou Sintético) / 1 - Sintético / 2 - Analítico",
           "type": "string",
           "enum": [
             "1",
@@ -226,7 +226,7 @@
               "required": true,
               "type": "varchar",
               "length": "1",
-              "note": "Define se o item contábil é Sintético ou Analitico",
+              "note": "Define se o item contábil é Sintético ou Analítico",
               "available": true,
               "canUpdate": false
             },
@@ -256,7 +256,7 @@
               "required": true,
               "type": "varchar",
               "length": "1",
-              "note": "Define se o item esta Ativa ou Inativa (Bloqueada)",
+              "note": "Define se o item esta Ativo ou Inativo (Bloqueado)",
               "available": true,
               "canUpdate": false
             },
