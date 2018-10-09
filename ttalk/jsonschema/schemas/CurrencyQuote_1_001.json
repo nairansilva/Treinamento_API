@@ -41,10 +41,8 @@
         "CurrencyQuote":{
 			"type":"array",
 			"items":{
-				"properties": {
-					"type":"object",
-					"$ref":"#/definitions/CurrencyQuoteInfo"
-				}
+				"type":"object",
+				"$ref":"#/definitions/CurrencyQuoteInfo"
             }
         },
         "CurrencyQuoteInfo":{
@@ -80,8 +78,8 @@
 					"type": "array",
 					"maxItems": 99,
 					"items": {
-						"$ref": "#/definitions/CurrencyType",
-						"type": "object"
+						"type": "object",
+						"$ref": "#/definitions/CurrencyType"
 					}
 				}
 			},
