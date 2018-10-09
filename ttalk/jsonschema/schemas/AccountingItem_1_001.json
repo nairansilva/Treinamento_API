@@ -39,18 +39,18 @@
     }
   },
   "definitions": {
-	"PagedAccountingItens":{
+	"PagedItens":{
 		"type":"object",
             "allOf":[
                 {
                     "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
                 },
                 {
-                    "$ref":"#/definitions/AccountingItens"
+                    "$ref":"#/definitions/Itens"
                 }
             ]
 	},
-	"AccountingItens":{
+	"Itens":{
 		"type":"object",
             "properties":{
                 "items":{
