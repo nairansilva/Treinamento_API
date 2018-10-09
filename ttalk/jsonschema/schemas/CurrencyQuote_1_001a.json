@@ -30,19 +30,22 @@
 	"definitions": {
 		"PagedCurrencyQuote": {
 			"type": "object",
-			"properties": {
+			"allOf": [
 				{
 					"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
 				},
 				"CurrencyQuote":{
 					"description": "Cotações das moedas",
-					"type":"array",
-					"items":{
-						"type":"object",
-						"$ref":"#/definitions/CurrencyQuoteInfo"
+					"type":"object",
+					"CurrencyQuote":{
+						"type":"array",
+						"items":{
+							"type":"object",
+							"$ref":"#/definitions/CurrencyQuoteInfo"
+						}
 					}
 				}
-			}
+			]
 		},
         "CurrencyQuoteInfo":{
             "type":"object",
