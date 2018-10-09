@@ -138,7 +138,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/raposo/CurrencyQuote/v1/1_001/ttalk/jsonschema/schemas/CurrencyQuote_1_001a.json#/definitions/PagedCurrencyQuote"
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/raposo/CurrencyQuote/v1/1_001/ttalk/jsonschema/schemas/CurrencyQuote_1_001a.json#/definitions/CurrencyQuoteInfo"
 								}
 							}
 						}

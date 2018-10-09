@@ -39,10 +39,14 @@
 			]
 		},
         "CurrencyQuote":{
-			"type":"array",
-			"items":{
-				"type":"object",
-				"$ref":"#/definitions/CurrencyQuoteInfo"
+            "type":"object",
+            "properties":{
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/CurrencyQuoteInfo"
+                    }
+                }
             }
         },
         "CurrencyQuoteInfo":{
