@@ -34,10 +34,12 @@
 				{
 					"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
 				}, {
-					"type": "array",
-					"items": {
-						"properties": {
-							"$ref": "#/definitions/CurrencyQuoteInfo"
+					"CurrencyQuote": {
+						"type": "array",
+						"items": {
+							"properties": {
+								"$ref": "#/definitions/CurrencyQuoteInfo"
+							}
 						}
 					}
 				}
