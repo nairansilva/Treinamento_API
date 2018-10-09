@@ -81,7 +81,7 @@
                         "content":{
                             "application/json":{
                                 "schema":{                                    
-									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/accountingitem/v1/2_000/ttalk/jsonschema/schemas/AccountingItem_1_001.json#/definitions/PagedAccountingItens"  
+									"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/accountingitem/v1/2_000/ttalk/jsonschema/schemas/AccountingItem_1_001.json#/definitions/PagedItens"  
                                 }
                             }
                         }
