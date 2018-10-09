@@ -39,6 +39,28 @@
     }
   },
   "definitions": {
+      "PagedFinancialNature":{
+        "type":"object",
+        "allOf":[
+            {
+                "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
+            },
+            {
+                "$ref":"#/definitions/FinancialNature"
+            }
+        ]
+    },
+      "FinancialNature":{
+        "type":"object",
+        "properties":{
+            "items":{
+                "type":"array",
+                "items":{
+                    "$ref":"#/definitions/BusinessContentType"
+                }
+            }
+        }
+    },
     "BusinessContentType": {
       "type": "object",
       "properties": {
