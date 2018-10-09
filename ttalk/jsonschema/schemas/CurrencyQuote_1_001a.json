@@ -49,13 +49,16 @@
 			"type": "object",
 			"properties": {
 				"CompanyId": {
-					"type": "string"
+					"type": "string",
+					"example": "T1"
 				},
 				"BranchId": {
-					"type": "string"
+					"type": "string",
+					"example": "D MG 01 "
 				},
 				"CompanyInternalId": {
-					"type": "string"
+					"type": "string",
+					"example": "T1D MG 01 "
 				},
 				"Date": {
 					"description": "Data da cotação",
