@@ -33,38 +33,32 @@
 			"allOf": [
 				{
 					"$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/Paging"
-				}, {
-					"CurrencyQuote": {
-						"type": "array",
-						"items": {
-							"properties": {
-								"$ref": "#/definitions/CurrencyQuoteInfo"
-							}
-						}
+				},
+				"CurrencyQuote":{
+					"type":"array",
+					"items":{
+						"type":"object",
+						"$ref":"#/definitions/CurrencyQuoteInfo"
 					}
 				}
 			]
 		},
-		"CurrencyQuoteInfo": {
-			"type": "object",
+        "CurrencyQuoteInfo":{
+            "type":"object",
 			"properties": {
 				"CompanyId": {
-					"type": "string",
-					"example": "T1"
+					"type": "string"
 				},
 				"BranchId": {
-					"type": "string",
-					"example": "D MG 01 "
+					"type": "string"
 				},
 				"CompanyInternalId": {
-					"type": "string",
-					"example": "T1D MG 01 "
+					"type": "string"
 				},
 				"Date": {
 					"description": "Data da cotação",
 					"type": "string",
 					"format": "date",
-					"example": "20180501",
 					"x-totvs": [{
 							"product": "PROTHEUS",
 							"field": "M2_DATA",
@@ -82,8 +76,8 @@
 					"type": "array",
 					"maxItems": 99,
 					"items": {
-						"$ref": "#/definitions/CurrencyType",
-						"type": "object"
+						"type": "object",
+						"$ref": "#/definitions/CurrencyType"
 					}
 				}
 			},
@@ -103,7 +97,6 @@
 					"minimum": 1,
 					"maximum": 99,
 					"format": "int32",
-					"example": 2,
 					"x-totvs": [{
 							"product": "PROTHEUS",
 							"field": "",
@@ -119,7 +112,6 @@
 				"Name": {
 					"description": "Nome da moeda (Real, Dólar, Euro...)",
 					"type": "string",
-					"example": "Euro",
 					"x-totvs": [{
 							"product": "PROTHEUS",
 							"field": "MV_MOEDA + código da moeda (ex: MV_MOEDA1, MV_MOEDA2... MV_MOEDA99)",
@@ -135,7 +127,6 @@
 				"Symbol": {
 					"description": "Símbolo da moeda (R$, US$, €...)",
 					"type": "string",
-					"example": "€",
 					"x-totvs": [{
 							"product": "PROTHEUS",
 							"field": "MV_SIMB + código da moeda (ex: MV_SIMB1, MV_SIMB2... MV_SIMB99)",
@@ -152,7 +143,6 @@
 					"description": "Cotação da moeda",
 					"type": "number",
 					"format": "double",
-					"example": 4.0521,
 					"x-totvs": [{
 							"product": "PROTHEUS",
 							"field": "M2_MOEDA + código da moeda (ex: M2_MOEDA1, M2_MOEDA2... M2_MOEDA99)",
@@ -170,6 +160,6 @@
 				"Code",
 				"Quote"
 			]
-		}
+		}			
 	}
 }
