@@ -187,8 +187,14 @@
             "SPED":{
                 "type":"string",
                 "description":"Define se Centro de Custo será enviado para SPED",
-                "note": "Tag não utilizada no Protheus",
-                "example": ""
+                "example": "",
+                "x-totvs": [
+                    {
+                        "product":"protheus",
+                        "required":true,
+                        "note":"Tag não utilizada no Protheus"
+                    }
+                ]
             },
             "Class":{
                 "type":"string",
