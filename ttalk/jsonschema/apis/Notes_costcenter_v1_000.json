@@ -149,7 +149,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/PagedCostCenters"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/CostCentersInfo"
                                 }   
                             }
                         }
@@ -211,13 +211,13 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/PagedCostCenters"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/CostCentersInfo"
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Anotação não localizada na base",
+                        "description": "Centro de Custo a ser alterado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -227,7 +227,7 @@
                         }
                     },
                     "404": {
-                        "description": "Anotação não localizada na base",
+                        "description": "Centro de Custo não localizado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -274,7 +274,7 @@
                             }
                         }
                     },
-                    "description": "Anotação a ser alterada"
+                    "description": "Centro de Custo a ser alterado"
                 },
                 "responses": {
                     "200": {
@@ -298,7 +298,7 @@
                         }                        
                       },
                     "404": {
-                        "description": "Anotação não localizada",
+                        "description": "Centro de Custo não localizado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -353,7 +353,7 @@
                         }                        
                       },
                     "404": {
-                        "description": "Anotação não localizada",
+                        "description": "Centro de Custo não localizado",
                         "content": {
                             "application/json": {
                                 "schema": {

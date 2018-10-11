@@ -74,6 +74,7 @@
             "CompanyId":{
                 "type":"string",
                 "description":"Código da empresa",
+                "example": "T1",
                 "maxLength":3
             },
             "BranchId":{
@@ -93,7 +94,8 @@
             },
             "CompanyInternalId":{
                "type":"string",
-               "description":"InternalId da chave completa de empresa do produto<",
+               "description":"InternalId da chave completa de empresa do produto",
+               "example": "T1D MG 01 000000001",
                "x-totvs":[
                     {
                         "product": "protheus",
@@ -109,7 +111,7 @@
             "Code":{
                "type":"string",
                "description":"Código do Centro de Custo",
-               "example": "000001",
+               "example": "000000001",
                "x-totvs":[
                    {
                     "product": "protheus",
@@ -125,6 +127,7 @@
             "InternalId":{
                 "type":"string",
                 "description":"InternalId de Integração",
+                "example": "D MG 01 000000001",
                 "x-totvs":[
                     {
                         "product": "protheus",
@@ -169,7 +172,7 @@
             "ShortCode":{
                 "type":"string",
                 "description":"Código Reduzido",
-                "example": "00000101",
+                "example": "C001",
                 "x-totvs": [
                     {
                         "product":"protheus",
@@ -184,6 +187,7 @@
             "SPED":{
                 "type":"string",
                 "description":"Define se Centro de Custo será enviado para SPED",
+                "note": "Tag não utilizada no Protheus",
                 "example": ""
             },
             "Class":{
