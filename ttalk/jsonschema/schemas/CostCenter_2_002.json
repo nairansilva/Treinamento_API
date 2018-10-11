@@ -56,7 +56,7 @@
         }
         ]
     },
-    "costcenters":{
+    "CostCenters":{
         "type":"object",
         "properties":{
             "items":{
@@ -67,7 +67,7 @@
             }
         }
     },
-    "CostcentersInfo":{
+    "CostCentersInfo":{
         "description": "Cadastro de Centro de Custo",
         "type":"object",
         "properties": {

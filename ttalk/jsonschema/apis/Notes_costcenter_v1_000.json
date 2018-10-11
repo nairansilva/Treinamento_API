@@ -3,7 +3,7 @@
     "servers": [
         {
             "description": "API para cadastro de Centro de Custo produtos TOTVS",                
-            "url": "http://{serverUrl}:{serverHttpPort}/api/control/v1",
+            "url": "http://{serverUrl}:{serverHttpPort}/api/ctb/v1",
             "variables": {			
                 "serverUrl": {
                     "default":"localhost"
@@ -81,7 +81,7 @@
                         "content":{
                             "application/json":{
                                 "schema":{                                    
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedNotes"                                    
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/PagedCostCenters"                                    
                                 }
                             }
                         }
@@ -149,7 +149,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/PagedNotes"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/PagedCostCenters"
                                 }   
                             }
                         }
@@ -211,7 +211,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/NotesInfo"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/PagedCostCenters"
                                 }
                             }
                         }
@@ -282,7 +282,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/schemas/Notes_2_000.json#/definitions/NotesInfo"
+                                    "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/CostCentersInfo"
                                 }
                             }
                         }
