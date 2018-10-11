@@ -62,7 +62,7 @@
             "items":{
                 "type":"array",
                 "items":{
-                    "$ref":"#/definitions/CostcentersInfo"
+                    "$ref":"#/definitions/CostCentersInfo"
                 }
             }
         }

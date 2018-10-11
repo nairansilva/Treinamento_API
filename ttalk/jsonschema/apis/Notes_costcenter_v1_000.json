@@ -86,8 +86,8 @@
                             }
                         }
                     },
-                    "400": {
-                        "description": "erro no momento da requisição",
+                    "404": {
+                        "description": "Centro de Custo não localizado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -96,6 +96,7 @@
                             }
                         }
                     }
+                }
             }, 
             "post": {
                 "tags": [
