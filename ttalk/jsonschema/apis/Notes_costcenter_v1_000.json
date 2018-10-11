@@ -80,7 +80,7 @@
                         "description":"operação realizada com sucesso!",
                         "content":{
                             "application/json":{
-                                "schema":{                                    
+                                "schema":{                              
                                     "$ref":"https://raw.githubusercontent.com/nairansilva/Treinamento_API/costcenter/v1/2_002/ttalk/jsonschema/schemas/CostCenter_2_002.json#/definitions/PagedCostCenters"                                    
                                 }
                             }
@@ -95,18 +95,7 @@
                                 }
                             }
                         }
-                    },
-                    "404": {
-                        "description": "erro no momento da requisição",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://raw.githubusercontent.com/nairansilva/Treinamento_API/master/ttalk/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                                }
-                            }
-                        }
                     }
-                }
             }, 
             "post": {
                 "tags": [
